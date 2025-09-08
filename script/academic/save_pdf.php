@@ -10,9 +10,10 @@ require_once('const/check_session.php');
 require_once('tcpdf/tcpdf.php');
 require_once('const/calculations.php');
 
-if ($res == "1" && $level == "1" && isset($_GET['term'])) {} else { 
+if ($res == "1" && $level == "1" && isset($_GET['term'])) {
+} else {
     ob_end_clean();
-    header("location:../"); 
+    header("location:../");
     exit();
 }
 
@@ -76,7 +77,7 @@ $pdf->Ln(3);
 // Grade Sheet Header with student name
 $html = '
 <div style="font-size:11px; font-weight:bold; font-family:helvetica; text-align:left; width:0cm;">
-  THE FOLLOWING ARE THE GRADE(S) SECURED BY: <u>' . strtoupper($student_name) . '</u>
+THE FOLLOWING ARE THE GRADE(S) SECURED BY: <u>' . strtoupper($student_name) . '</u>
   <div style=""></div>
   DATE OF BIRTH: <u>' . $dob_bs . '</u> B.S. SYMBOL NO: <u>' . $symbol_no . '</u> <br><br> GRADE XI IN THE 
   ANNUAL EXAMINATION CONDUCTED IN ' . $exam_year . ' A.D. ARE GIVEN BELOW.
@@ -149,7 +150,7 @@ foreach ($exam_results as $row) {
     $subject_name = $row['subject_name'];
     $has_practical = $row['has_practical'] ?? 0;
     $credit_hour = 3;
-    
+
     $theory_marks = $row['theory_marks'] ?? 0;
     $internal_marks = $row['internal_marks'] ?? 0;
     $total_marks = $row['total_marks'] ?? 0;
@@ -158,12 +159,12 @@ foreach ($exam_results as $row) {
     $remark = $row['remarks'] ?? 'Not Graded';
     $status = $row['result_status'] ?? 'FAIL';
     $final_grade = $grade;
-    
+
     // If total_marks is 0 but score exists, use score for display
     if ($total_marks == 0 && $row['score'] > 0) {
         $total_marks = $row['score'];
     }
-    
+
     if ($status == 'PASS' && $gpa_value > 0) {
         $total_gpa += $gpa_value;
         $subject_count++;
@@ -232,4 +233,3 @@ ob_end_clean();
 // Output the PDF
 $pdf->Output($title . '.pdf', 'I');
 exit();
-?>
