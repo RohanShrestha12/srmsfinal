@@ -398,7 +398,7 @@ INSERT INTO `tbl_staff` (`id`, `fname`, `lname`, `gender`, `email`, `password`, 
 (12, 'JOSEPH', 'HAMISI', 'Male', 'joseph@srms.test', '$2y$10$l8XYJDrBHTyeZkpupiRhwey6jJihzku0bYXiVtBM5kDRz3sZvSpgC', 2, 1),
 (13, 'Saugat', 'Thapa', 'Male', 'saugat@gmail.com', '$2y$10$ZNGU9aRLjyY5ZQKebFMGc.6qyoBLuOM0o4lLJR6Bc3haFhOrEpSL6', 2, 1),
 (14, 'Rohan', 'Shrestha', 'Male', 'bca210604_rohan@achsnepal.edu.np', '$2y$10$h8Yc0PG/yofw8P3mJ6KcteP426cSfWSPk1WFw1BGOWr4O9yf9m6K.', 0, 1),
-(15, 'test', 'test', 'Male', 'test@gmail.com', '$2y$10$/xCONkg1oTHsiuMm8qOUrObymLCTdoGR.GTdOGORVOBn4GMM6upD2', 1, 1);
+(15, 'test', 'test', 'Male', 'bishal@gmail.com', '$2y$10$/xCONkg1oTHsiuMm8qOUrObymLCTdoGR.GTdOGORVOBn4GMM6upD2', 1, 1);
 
 -- --------------------------------------------------------
 
